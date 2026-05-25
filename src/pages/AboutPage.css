@@ -1,0 +1,706 @@
+/* AboutPage.css - Fixed Hero Section with Working Images & Rasputin Font */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-page {
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Title Styles */
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.section-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #d9b89c, #c49a6c);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.section-line.centered {
+  margin: 15px auto 0;
+}
+
+/* Hero Section - Fixed with Working Image */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Fallback if first image doesn't work */
+@supports (background-image: url('https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg')) {
+  .about-hero {
+      background-image: url('https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.about-hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.about-hero-line {
+  width: 80px;
+  height: 3px;
+  background: #d9b89c;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Story Section */
+.story-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text .section-title {
+  text-align: left;
+}
+
+.story-text .section-line {
+  margin: 10px 0 25px 0;
+}
+
+.story-text p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.story-highlights {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.highlight-icon {
+  color: #d9b89c;
+  font-size: 20px;
+}
+
+.highlight span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.story-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.05);
+}
+
+.story-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  text-align: center;
+}
+
+.story-image-overlay span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+  font-size: 48px;
+  color: #d9b89c;
+  margin-bottom: 15px;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #555555;
+  font-weight: 500;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Values Section - With Sticky Background */
+.values-section {
+  position: relative;
+  padding: 100px 0;
+  background-image: url('https://i.postimg.cc/FzrDdCXc/2-(2).jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.values-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.values-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.values-section .section-title {
+  color: #ffffff;
+}
+
+.values-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.value-card {
+  text-align: center;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 1);
+  border-color: #d9b89c;
+}
+
+.value-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #d9b89c;
+}
+
+.value-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.value-description {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Why Choose Us Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.why-card {
+  text-align: center;
+  padding: 35px 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.why-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(217, 184, 156, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  color: #d9b89c;
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+  background: #d9b89c;
+  color: #ffffff;
+}
+
+.why-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Partners Section */
+.partners-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.partners-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #555555;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.partners-grid-about {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+
+.partner-card-about {
+  position: relative;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.partner-card-about img {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.partner-card-about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.partner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.partner-card-about:hover .partner-overlay {
+  opacity: 1;
+}
+
+.partner-overlay h4 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.cta-content p {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.cta-button {
+  background: #d9b89c;
+  color: #ffffff;
+  border: none;
+  padding: 14px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.cta-button:hover {
+  background: #c49a6c;
+  transform: translateX(5px);
+  gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .stats-grid,
+  .values-grid,
+  .why-choose-grid {
+      gap: 20px;
+  }
+  
+  .partners-grid-about {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .story-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+  }
+  
+  .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .why-choose-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-hero-title {
+      font-size: 42px;
+  }
+  
+  .section-title {
+      font-size: 32px;
+  }
+  
+  .cta-content h2 {
+      font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+      height: 50vh;
+      min-height: 350px;
+      background-attachment: scroll;
+  }
+  
+  .about-hero-title {
+      font-size: 32px;
+  }
+  
+  .about-hero-subtitle {
+      font-size: 16px;
+  }
+  
+  .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+  
+  .values-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .why-choose-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .partners-grid-about {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .section-title {
+      font-size: 28px;
+  }
+  
+  .stat-number {
+      font-size: 36px;
+  }
+  
+  .cta-content h2 {
+      font-size: 28px;
+  }
+  
+  .story-highlights {
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .values-section {
+      background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-title {
+      font-size: 24px;
+  }
+  
+  .about-hero-subtitle {
+      font-size: 14px;
+  }
+  
+  .partners-grid-about {
+      grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+      font-size: 24px;
+  }
+  
+  .value-card {
+      padding: 30px 20px;
+  }
+  
+  .why-card {
+      padding: 25px 20px;
+  }
+  
+  .cta-button {
+      padding: 12px 25px;
+      font-size: 14px;
+  }
+
+  .story-section .container{
+    margin-top: -100px;
+  }
+
+  .values-section .container{
+    margin-top: -100px;
+  }
+
+  .why-choose-section .container{
+    margin-top: -100px;
+  }
+
+  .partners-section .container{
+    margin-top: -100px;
+  }
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.story-text {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.story-image {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* GPU Acceleration */
+.story-image img,
+.partner-card-about img,
+.value-card,
+.why-card,
+.stat-card {
+  will-change: transform;
+  transform: translateZ(0);
+}

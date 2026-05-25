@@ -1,0 +1,432 @@
+/* CatalogPage.css - Updated with Rasputin Font */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.catalog-page {
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.catalog-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 300px;
+  background-image: url('https://assets.hansgrohe.com/celum/web/aquno-select-m81-chrome-ginger-being-washed-ambiance_4x3.jpg?format=HBW13');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.catalog-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.catalog-hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  animation: fadeInUp 0.8s ease-out;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.catalog-hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.catalog-hero-line {
+  width: 80px;
+  height: 3px;
+  background: #d9b89c;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin: 60px 0 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #d9b89c, #c49a6c);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #555555;
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Brands Grid - Image First, Title on Hover */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.brand-card {
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #f8f8f8;
+}
+
+.brand-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.brand-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.brand-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  background: #f8f8f8;
+  transition: transform 0.5s ease;
+}
+
+.brand-card:hover .brand-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.brand-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-overlay {
+  opacity: 1;
+}
+
+.brand-name-hover {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.brand-card:hover .brand-name-hover {
+  transform: translateY(0);
+}
+
+/* Catalog Header */
+.catalog-header {
+  margin: 60px 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  background: #d9b89c;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.back-btn:hover {
+  background: #c49a6c;
+  transform: translateX(-5px);
+}
+
+.catalog-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.catalog-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #d9b89c, #c49a6c);
+  border-radius: 2px;
+}
+
+/* Catalog Images Grid - Fixed for full image display */
+.catalog-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.catalog-image-card {
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  position: relative;
+}
+
+.catalog-image-card img {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  max-height: 800px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+  background: #f8f8f8;
+  padding: 10px;
+}
+
+.catalog-image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.catalog-image-card:hover img {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .brands-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .catalog-hero-title {
+      font-size: 42px;
+  }
+  
+  .brands-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .catalog-title {
+      font-size: 28px;
+  }
+  
+  .catalog-images-grid {
+      gap: 25px;
+  }
+  
+  .catalog-image-card img {
+      min-height: 220px;
+      max-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-hero {
+      height: 35vh;
+      min-height: 250px;
+      background-attachment: scroll;
+  }
+  
+  .catalog-hero-title {
+      font-size: 32px;
+  }
+  
+  .catalog-hero-subtitle {
+      font-size: 16px;
+  }
+  
+  .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+  
+  .section-title {
+      font-size: 28px;
+  }
+  
+  .catalog-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      margin: 40px 0 30px;
+  }
+  
+  .catalog-title {
+      font-size: 24px;
+  }
+  
+  /* 2 images per row on tablet */
+  .catalog-images-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+  
+  .catalog-image-card img {
+      min-height: 200px;
+      max-height: 50px;
+      padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog-hero-title {
+      font-size: 28px;
+  }
+  
+  .catalog-hero-subtitle {
+      font-size: 14px;
+  }
+  
+  .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+  }
+  
+  .brand-name-hover {
+      font-size: 18px;
+  }
+  
+  .section-title {
+      font-size: 24px;
+  }
+  
+  .section-subtitle {
+      font-size: 14px;
+  }
+  
+  /* 1 image per row on mobile */
+  .catalog-images-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+  
+  .catalog-image-card {
+      width: 100%;
+  }
+  
+  .catalog-image-card img {
+      min-height: 250px;
+      max-height: 450px;
+      padding: 10px;
+  }
+  
+  .back-btn {
+      padding: 10px 20px;
+      font-size: 12px;
+  }
+  
+  .catalog-title {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brands-grid {
+      grid-template-columns: 1fr;
+      max-width: 280px;
+      margin: 0 auto;
+  }
+  
+  .brand-name-hover {
+      font-size: 20px;
+  }
+  
+  .catalog-image-card img {
+      min-height: 200px;
+      max-height: 400px;
+  }
+}
