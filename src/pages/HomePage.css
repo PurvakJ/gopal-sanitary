@@ -1272,6 +1272,10 @@
     padding: 6px 12px;
     font-size: 10px;
   }
+
+  .latest-collection .container{
+  margin-top: -100px;
+}
 }
 
 /* ============================================
@@ -1318,3 +1322,11 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+@import url('https://fonts.cdnfonts.com/css/rasputin');
+
+@font-face {
+  font-family: 'Rasputin';
+  src: url('https://fonts.cdnfonts.com/s/10294/RASPUTN.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
