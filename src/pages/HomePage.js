@@ -22,7 +22,7 @@ const HomePage = () => {
     { id: 5, img: 'https://i.pinimg.com/736x/e6/eb/a3/e6eba30a1bce53acd7dfecfa0e53890f.jpg', title: 'Premium Finish' },
   ];
 
-  // Product Categories with images
+  // Product Categories dynamically from brand data
   const productCategories = [
     { id: 1, name: 'Wash Basin', icon: 'fas fa-sink', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRWp-uU9HgK3W_d3ZFXpsHHy4ES43qoNUceFso1ygWi9h2A6AX48deOAHYvxDm8Tx2loVx_gPMqONvowXCtyr2nwkkiLerwgFXuRwgNjgo' },
     { id: 2, name: 'Sink Faucets', icon: 'fas fa-faucet', image: 'https://www.jaquar.com/images/thumbs/0055440_florentine-prime_400.webp' },
@@ -30,6 +30,19 @@ const HomePage = () => {
     { id: 4, name: 'Showers', icon: 'fas fa-shower', image: 'https://m.media-amazon.com/images/I/71vLh2tWhWL._AC_UF1000,1000_QL80_.jpg' },
     { id: 5, name: 'Mirrors', icon: 'fas fa-eye', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5pQGKWqdBgSwjwJeOeY626FRwDgyhk8SHLA&s' },
     { id: 6, name: 'Grab Rails', icon: 'fas fa-hand-holding-heart', image: 'https://static.wixstatic.com/media/45c388_b5268ef431394bc2bd2ce025eb5f863b~mv2.jpg/v1/fill/w_640,h_784,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/45c388_b5268ef431394bc2bd2ce025eb5f863b~mv2.jpg' },
+  ];
+
+  // Brand categories from the catalog (these will link to catalog page with specific brand)
+  const brandCategoriesFromCatalog = [
+    { id: 1, name: 'VGUARD', icon: 'fas fa-plug', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/86/V-Guard_Industries.svg/1280px-V-Guard_Industries.svg.png', brandKey: 'VGUARD' },
+    { id: 2, name: 'JAQUAR', icon: 'fas fa-tint', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jaquar_logo.svg/250px-Jaquar_logo.svg.png', brandKey: 'JAQUAR' },
+    { id: 3, name: 'KITEC', icon: 'fas fa-industry', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTryvzpG8NkfNXsqlusu3I92Ywo3VUXUC7vxQ&s', brandKey: 'KITEC' },
+    { id: 4, name: 'NOVA', icon: 'fas fa-water', image: 'https://media.licdn.com/dms/image/v2/C560BAQHzK_9Ycov6qw/company-logo_200_200/company-logo_200_200/0/1630575485997/nova_plastik_san_tic_a__logo?e=2147483647&v=beta&t=bX0tDdf3LFvKxD0iP2fAkYTk3DO3g8ny-8UM6Kw9qHw', brandKey: 'NOVA' },
+    { id: 5, name: 'EROS', icon: 'fas fa-gem', image: 'https://i.pinimg.com/736x/e0/3e/57/e03e570adbacaec736c6d1d865bcc903.jpg', brandKey: 'EROS' },
+    { id: 6, name: 'AROFIC', icon: 'fas fa-shower', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQexOvLwKCqfBqsABNAel2tdMKU6BI5lIASw&s', brandKey: 'AROFIC' },
+    { id: 7, name: 'DEEPALI', icon: 'fas fa-sink', image: 'https://deepalisinks.com/wp-content/uploads/2021/10/Deepali-Sinks-Logo.png', brandKey: 'DEEPALI' },
+    { id: 8, name: 'SHEENZ', icon: 'fas fa-faucet', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_jRCABpHv6cMdQCVG_F88P4M9PlgEgTsMg&s', brandKey: 'SHEENZ' },
+    { id: 9, name: 'ZERO-B', icon: 'fas fa-tint', image: 'https://www.zerobonline.com/wp-content/uploads/2023/08/ZB-Logo-social-share2.jpg', brandKey: 'ZERO-B' },
   ];
 
   const latestCollections = [
@@ -88,7 +101,7 @@ const HomePage = () => {
     { id: 14, name: 'AROFIC', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQexOvLwKCqfBqsABNAel2tdMKU6BI5lIASw&s' },
     { id: 15, name: 'GEBERIT', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdicD30F2fVkcM1TP5ZnhIJwp9dZ3Vo6jUIw&s' },
     { id: 16, name: 'DEEPALI', img: 'https://deepalisinks.com/wp-content/uploads/2021/10/Deepali-Sinks-Logo.png' },
-    { id: 17, name: 'SHIRS', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_jRCABpHv6cMdQCVG_F88P4M9PlgEgTsMg&s' },
+    { id: 17, name: 'SHEENZ', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_jRCABpHv6cMdQCVG_F88P4M9PlgEgTsMg&s' },
     { id: 18, name: 'KSB', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcRw4IQANpBYNiS2897yChcHMszeA754DdA&s' },
     { id: 19, name: 'ZERO-B', img: 'https://www.zerobonline.com/wp-content/uploads/2023/08/ZB-Logo-social-share2.jpg' },
   ];
@@ -243,9 +256,9 @@ const HomePage = () => {
                 Luxury is at the heart of everything we do. From the finest materials to meticulous craftsmanship, 
                 our products are designed to exude elegance and sophistication.
               </p>
-<Link to="/catalog" className="btn-show-categories">
-  Show more categories <i className="fas fa-arrow-right"></i>
-</Link>
+              <Link to="/catalog" className="btn-show-categories">
+                Show more categories <i className="fas fa-arrow-right"></i>
+              </Link>
             </div>
           </div>
         </div>
@@ -293,7 +306,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Product Categories Section */}
+      {/* Product Categories Section - Static Categories */}
       <section className="categories-section">
         <div className="container">
           <div className="section-header">
@@ -317,6 +330,45 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Categories Section - Dynamically from Catalog */}
+      <section className="brand-categories-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">OUR PREMIUM BRANDS</h2>
+            <p className="section-subtitle">Explore catalogs from our trusted partner brands</p>
+          </div>
+          <div className="brand-categories-grid">
+            {brandCategoriesFromCatalog.map((brand) => (
+              <Link 
+                key={brand.id} 
+                to="/catalog" 
+                state={{ selectedBrand: brand.brandKey }}
+                className="brand-category-card"
+                onClick={() => {
+                  // Store selected brand in localStorage to persist across navigation
+                  localStorage.setItem('selectedCatalogBrand', brand.brandKey);
+                }}
+              >
+                <div className="brand-category-image-wrapper">
+                  <img 
+                    src={brand.image} 
+                    alt={brand.name}
+                    className="brand-category-image"
+                  />
+                  <div className="brand-category-overlay">
+                    <div className="brand-category-icon">
+                      <i className={brand.icon}></i>
+                    </div>
+                    <h3 className="brand-category-name">{brand.name}</h3>
+                    <p className="brand-category-link">View Catalog →</p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -398,56 +450,56 @@ const HomePage = () => {
 
       {/* Partners Brands Section with Circular Carousel */}
       <section className="partners-section">
-  <div className="container">
-    <div className="section-header">
-      <h2 className="section-title">PARTNERS WITH US</h2>
-      <p className="section-subtitle">
-        We collaborate with the world's leading brands to bring you exceptional quality
-      </p>
-    </div>
-    
-    <div className="partners-carousel-container">
-      <button 
-        className="partners-carousel-btn prev" 
-        onClick={() => scrollPartners(-1)}
-        aria-label="Previous"
-      >
-        <FaChevronLeft />
-      </button>
-      
-      <div className="partners-carousel-wrapper">
-        <div 
-          className="partners-carousel" 
-          style={{ 
-            transform: `translateX(-${partnersCurrentIndex * (100 / partnersItemsPerView)}%)`,
-            transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
-          }}
-          onTransitionEnd={handleTransitionEnd}
-        >
-          {/* Render duplicated items for circular effect */}
-          {extendedPartnerBrands.map((brand, idx) => (
-            <div key={`${brand.id}-${idx}`} className="partner-carousel-card">
-              <div className="partner-carousel-image">
-                <img src={brand.img} alt={brand.name} />
-                <div className="partner-carousel-overlay">
-                  <h4>{brand.name}</h4>
-                </div>
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">PARTNERS WITH US</h2>
+            <p className="section-subtitle">
+              We collaborate with the world's leading brands to bring you exceptional quality
+            </p>
+          </div>
+          
+          <div className="partners-carousel-container">
+            <button 
+              className="partners-carousel-btn prev" 
+              onClick={() => scrollPartners(-1)}
+              aria-label="Previous"
+            >
+              <FaChevronLeft />
+            </button>
+            
+            <div className="partners-carousel-wrapper">
+              <div 
+                className="partners-carousel" 
+                style={{ 
+                  transform: `translateX(-${partnersCurrentIndex * (100 / partnersItemsPerView)}%)`,
+                  transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
+                }}
+                onTransitionEnd={handleTransitionEnd}
+              >
+                {/* Render duplicated items for circular effect */}
+                {extendedPartnerBrands.map((brand, idx) => (
+                  <div key={`${brand.id}-${idx}`} className="partner-carousel-card">
+                    <div className="partner-carousel-image">
+                      <img src={brand.img} alt={brand.name} />
+                      <div className="partner-carousel-overlay">
+                        <h4>{brand.name}</h4>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+            
+            <button 
+              className="partners-carousel-btn next" 
+              onClick={() => scrollPartners(1)}
+              aria-label="Next"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
         </div>
-      </div>
-      
-      <button 
-        className="partners-carousel-btn next" 
-        onClick={() => scrollPartners(1)}
-        aria-label="Next"
-      >
-        <FaChevronRight />
-      </button>
-    </div>
-  </div>
-</section>
+      </section>
     </div>
   );
 };
