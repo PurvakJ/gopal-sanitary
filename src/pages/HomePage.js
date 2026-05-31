@@ -1,6 +1,6 @@
-// HomePage.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './HomePage.css';
 
@@ -206,301 +206,300 @@ const HomePage = () => {
   };
 
   return (
-    <div className="homepage">
-      {/* Carousel Section */}
-      <section className="carousel-section">
-        <div className="carousel-container">
-          <button className="carousel-btn prev" onClick={prevSlide}>❮</button>
-          <div className="carousel-slides">
-            {carouselImages.map((img, index) => (
-              <div
-                key={index}
-                className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-              >
-                <img src={img} alt={`Slide ${index + 1}`} />
-                <div className="carousel-caption">
-                  <h2 className="animate-text">LUXURY FAUCETS COLLECTION</h2>
-                  <p className="animate-text-delay">Visit Store Today</p>
+    <>
+      <Helmet>
+        <title>Gopal Sanitary House | Premium Sanitary Solutions Since 1995 | Mansa, Punjab</title>
+        <meta name="description" content="India's trusted sanitary store offering premium bathroom fittings, faucets, showers, and sanitaryware from top brands like Jaquar, VGUARD, KITEC. 28+ years of excellence. Visit our store in Mansa, Punjab." />
+        <meta name="keywords" content="sanitary store Mansa, bathroom fittings, faucets, sanitaryware, Jaquar, VGUARD, KITEC, wash basins, showers, bathtubs, Punjab sanitary shop" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gopal Sanitary House" />
+        <link rel="canonical" href="https://yourdomain.com" />
+        <meta property="og:title" content="Gopal Sanitary House - Premium Sanitary Solutions" />
+        <meta property="og:description" content="Your trusted partner for premium bathroom and sanitary products since 1995" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gopal Sanitary House - Premium Sanitary Solutions" />
+        <meta name="twitter:description" content="Your trusted partner for premium bathroom and sanitary products since 1995" />
+      </Helmet>
+
+      <div className="homepage">
+        {/* Carousel Section */}
+        <section className="carousel-section">
+          <div className="carousel-container">
+            <button className="carousel-btn prev" onClick={prevSlide} aria-label="Previous slide">❮</button>
+            <div className="carousel-slides">
+              {carouselImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+                >
+                  <img loading="lazy" src={img} alt={`Luxury bathroom showcase ${index + 1}`} />
+                  <div className="carousel-caption">
+                    <h2 className="animate-text">LUXURY FAUCETS COLLECTION</h2>
+                    <p className="animate-text-delay">Visit Store Today</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button className="carousel-btn next" onClick={nextSlide} aria-label="Next slide">❯</button>
+            <div className="carousel-dots">
+              {carouselImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  role="button"
+                  aria-label={`Go to slide ${index + 1}`}
+                ></span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Luxury Meets Comfort Section */}
+        <section className="luxury-section">
+          <div className="container">
+            <div className="luxury-content">
+              <div className="luxury-images-stack">
+                <div className="stack-image stack-image-1">
+                  <img loading="lazy" src="https://i.postimg.cc/VvfDrZP0/1-(2).jpg" alt="Luxury Bathroom Design" />
+                </div>
+                <div className="stack-image stack-image-2">
+                  <img loading="lazy" src="https://i.postimg.cc/nrF0jSf0/4.jpg" alt="Modern Bathroom Interior" />
                 </div>
               </div>
-            ))}
-          </div>
-          <button className="carousel-btn next" onClick={nextSlide}>❯</button>
-          <div className="carousel-dots">
-            {carouselImages.map((_, index) => (
-              <span
-                key={index}
-                className={`dot ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => goToSlide(index)}
-              ></span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Luxury Meets Comfort Section */}
-      <section className="luxury-section">
-        <div className="container">
-          <div className="luxury-content">
-            <div className="luxury-images-stack">
-              <div className="stack-image stack-image-1">
-                <img src="https://i.postimg.cc/VvfDrZP0/1-(2).jpg" alt="Luxury Bathroom 1" />
-              </div>
-              <div className="stack-image stack-image-2">
-                <img src="https://i.postimg.cc/nrF0jSf0/4.jpg" alt="Luxury Bathroom 2" />
+              <div className="luxury-text">
+                <h2>Where Luxury <span>Meets Comfort</span></h2>
+                <p>
+                  Luxury is at the heart of everything we do. From the finest materials to meticulous craftsmanship, 
+                  our products are designed to exude elegance and sophistication.
+                </p>
+                <Link to="/catalog" className="btn-show-categories">
+                  Show more categories <i className="fas fa-arrow-right"></i>
+                </Link>
               </div>
             </div>
-            <div className="luxury-text">
-              <h2>Where Luxury <span>Meets Comfort</span></h2>
-              <p>
-                Luxury is at the heart of everything we do. From the finest materials to meticulous craftsmanship, 
-                our products are designed to exude elegance and sophistication.
+          </div>
+        </section>
+
+        {/* 5 Image Collage Section */}
+        <section className="collage-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">OUR COLLECTION</h2>
+              <p className="section-subtitle">Discover our premium range of luxury faucets</p>
+            </div>
+            <div className="collage-grid">
+              {collageImages.map((image, index) => (
+                <div key={image.id} className={`collage-item collage-item-${index + 1}`}>
+                  <img loading="lazy" src={image.img} alt={image.title} />
+                  <div className="collage-overlay">
+                    <span>{image.title}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Product Categories Section */}
+        <section className="categories-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">PRODUCT CATEGORIES</h2>
+              <p className="section-subtitle">Explore our wide range of premium bathroom products</p>
+            </div>
+            <div className="categories-grid">
+              {productCategories.map((category) => (
+                <div key={category.id} className="category-card">
+                  <div className="category-image-wrapper">
+                    <img 
+                      loading="lazy"
+                      src={category.image} 
+                      alt={category.name}
+                      className="category-image"
+                    />
+                    <div className="category-overlay">
+                      <div className="category-icon">
+                        <i className={category.icon}></i>
+                      </div>
+                      <h3 className="category-name">{category.name}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Brand Categories Section */}
+        <section className="brand-categories-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">OUR PREMIUM BRANDS</h2>
+              <p className="section-subtitle">Explore catalogs from our trusted partner brands</p>
+            </div>
+            <div className="brand-categories-grid">
+              {brandCategoriesFromCatalog.map((brand) => (
+                <Link 
+                  key={brand.id} 
+                  to="/catalog" 
+                  state={{ selectedBrand: brand.brandKey }}
+                  className="brand-category-card"
+                  onClick={() => {
+                    localStorage.setItem('selectedCatalogBrand', brand.brandKey);
+                  }}
+                >
+                  <div className="brand-category-image-wrapper">
+                    <img 
+                      loading="lazy"
+                      src={brand.image} 
+                      alt={brand.name}
+                      className="brand-category-image"
+                    />
+                    <div className="brand-category-overlay">
+                      <div className="brand-category-icon">
+                        <i className={brand.icon}></i>
+                      </div>
+                      <h3 className="brand-category-name">{brand.name}</h3>
+                      <p className="brand-category-link">View Catalog →</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Latest Collection Section */}
+        <section className="latest-collection">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">LATEST COLLECTION</h2>
+              <p className="section-subtitle">Explore our newest arrivals with exclusive offers</p>
+            </div>
+            <div className="latest-grid">
+              {latestCollections.map((item) => (
+                <div key={item.id} className="latest-card">
+                  <div className="latest-image">
+                    <img loading="lazy" src={item.img} alt={item.title} />
+                  </div>
+                  <div className="latest-info">
+                    <h3>{item.title}</h3>
+                    <p className="latest-description">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Bestseller Products Section */}
+        <section className="bestseller-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">BEST SELLERS OF THE WEEK</h2>
+              <p className="section-subtitle">Our most popular faucets loved by customers</p>
+            </div>
+            <div className="products-grid">
+              {bestsellerProducts.map((product) => (
+                <div key={product.id} className="product-card">
+                  <div className="product-image">
+                    <img loading="lazy" src={product.img} alt={product.name} />
+                    <div className="product-badge">Bestseller</div>
+                  </div>
+                  <div className="product-info">
+                    <h3>{product.name}</h3>
+                    <div className="product-rating">
+                      {'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="blog-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">OUR BLOG</h2>
+              <p className="section-subtitle">
+                Expert insights, design inspiration, and tips for your perfect bathroom
               </p>
-              <Link to="/catalog" className="btn-show-categories">
-                Show more categories <i className="fas fa-arrow-right"></i>
-              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5 Image Collage Section */}
-      <section className="collage-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">OUR COLLECTION</h2>
-            <p className="section-subtitle">Discover our premium range of luxury faucets</p>
-          </div>
-          <div className="collage-grid">
-            <div className="collage-item collage-item-1">
-              <img src={collageImages[0].img} alt={collageImages[0].title} />
-              <div className="collage-overlay">
-                <span>{collageImages[0].title}</span>
-              </div>
-            </div>
-            <div className="collage-item collage-item-2">
-              <img src={collageImages[1].img} alt={collageImages[1].title} />
-              <div className="collage-overlay">
-                <span>{collageImages[1].title}</span>
-              </div>
-            </div>
-            <div className="collage-item collage-item-3">
-              <img src={collageImages[2].img} alt={collageImages[2].title} />
-              <div className="collage-overlay">
-                <span>{collageImages[2].title}</span>
-              </div>
-            </div>
-            <div className="collage-item collage-item-4">
-              <img src={collageImages[3].img} alt={collageImages[3].title} />
-              <div className="collage-overlay">
-                <span>{collageImages[3].title}</span>
-              </div>
-            </div>
-            <div className="collage-item collage-item-5">
-              <img src={collageImages[4].img} alt={collageImages[4].title} />
-              <div className="collage-overlay">
-                <span>{collageImages[4].title}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories Section - Static Categories */}
-      <section className="categories-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">PRODUCT CATEGORIES</h2>
-            <p className="section-subtitle">Explore our wide range of premium bathroom products</p>
-          </div>
-          <div className="categories-grid">
-            {productCategories.map((category) => (
-              <div key={category.id} className="category-card">
-                <div className="category-image-wrapper">
-                  <img 
-                    src={category.image} 
-                    alt={category.name}
-                    className="category-image"
-                  />
-                  <div className="category-overlay">
-                    <div className="category-icon">
-                      <i className={category.icon}></i>
-                    </div>
-                    <h3 className="category-name">{category.name}</h3>
+            <div className="blog-grid">
+              {blogPosts.map((post) => (
+                <article key={post.id} className="blog-card">
+                  <div className="blog-image">
+                    <img loading="lazy" src={post.img} alt={post.title} />
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Categories Section - Dynamically from Catalog */}
-      <section className="brand-categories-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">OUR PREMIUM BRANDS</h2>
-            <p className="section-subtitle">Explore catalogs from our trusted partner brands</p>
-          </div>
-          <div className="brand-categories-grid">
-            {brandCategoriesFromCatalog.map((brand) => (
-              <Link 
-                key={brand.id} 
-                to="/catalog" 
-                state={{ selectedBrand: brand.brandKey }}
-                className="brand-category-card"
-                onClick={() => {
-                  // Store selected brand in localStorage to persist across navigation
-                  localStorage.setItem('selectedCatalogBrand', brand.brandKey);
-                }}
-              >
-                <div className="brand-category-image-wrapper">
-                  <img 
-                    src={brand.image} 
-                    alt={brand.name}
-                    className="brand-category-image"
-                  />
-                  <div className="brand-category-overlay">
-                    <div className="brand-category-icon">
-                      <i className={brand.icon}></i>
-                    </div>
-                    <h3 className="brand-category-name">{brand.name}</h3>
-                    <p className="brand-category-link">View Catalog →</p>
+                  <div className="blog-content">
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt}</p>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Two Images Side by Side - Latest Collection */}
-      <section className="latest-collection">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">LATEST COLLECTION</h2>
-            <p className="section-subtitle">Explore our newest arrivals with exclusive offers</p>
-          </div>
-          <div className="latest-grid">
-            {latestCollections.map((item) => (
-              <div key={item.id} className="latest-card">
-                <div className="latest-image">
-                  <img src={item.img} alt={item.title} />
-                </div>
-                <div className="latest-info">
-                  <h3>{item.title}</h3>
-                  <p className="latest-description">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bestseller Products Section */}
-      <section className="bestseller-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">BEST SELLERS OF THE WEEK</h2>
-            <p className="section-subtitle">Our most popular faucets loved by customers</p>
-          </div>
-          <div className="products-grid">
-            {bestsellerProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-image">
-                  <img src={product.img} alt={product.name} />
-                  <div className="product-badge">Bestseller</div>
-                </div>
-                <div className="product-info">
-                  <h3>{product.name}</h3>
-                  <div className="product-rating">
-                    {'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="blog-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">OUR BLOG</h2>
-            <p className="section-subtitle">
-              Expert insights, design inspiration, and tips for your perfect bathroom
-            </p>
-          </div>
-          <div className="blog-grid">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="blog-card">
-                <div className="blog-image">
-                  <img src={post.img} alt={post.title} />
-                </div>
-                <div className="blog-content">
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Brands Section with Circular Carousel */}
-      <section className="partners-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">PARTNERS WITH US</h2>
-            <p className="section-subtitle">
-              We collaborate with the world's leading brands to bring you exceptional quality
-            </p>
-          </div>
-          
-          <div className="partners-carousel-container">
-            <button 
-              className="partners-carousel-btn prev" 
-              onClick={() => scrollPartners(-1)}
-              aria-label="Previous"
-            >
-              <FaChevronLeft />
-            </button>
+        {/* Partners Brands Section */}
+        <section className="partners-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">PARTNERS WITH US</h2>
+              <p className="section-subtitle">
+                We collaborate with the world's leading brands to bring you exceptional quality
+              </p>
+            </div>
             
-            <div className="partners-carousel-wrapper">
-              <div 
-                className="partners-carousel" 
-                style={{ 
-                  transform: `translateX(-${partnersCurrentIndex * (100 / partnersItemsPerView)}%)`,
-                  transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
-                }}
-                onTransitionEnd={handleTransitionEnd}
+            <div className="partners-carousel-container">
+              <button 
+                className="partners-carousel-btn prev" 
+                onClick={() => scrollPartners(-1)}
+                aria-label="Previous partners"
               >
-                {/* Render duplicated items for circular effect */}
-                {extendedPartnerBrands.map((brand, idx) => (
-                  <div key={`${brand.id}-${idx}`} className="partner-carousel-card">
-                    <div className="partner-carousel-image">
-                      <img src={brand.img} alt={brand.name} />
-                      <div className="partner-carousel-overlay">
-                        <h4>{brand.name}</h4>
+                <FaChevronLeft aria-hidden="true" />
+              </button>
+              
+              <div className="partners-carousel-wrapper">
+                <div 
+                  className="partners-carousel" 
+                  style={{ 
+                    transform: `translateX(-${partnersCurrentIndex * (100 / partnersItemsPerView)}%)`,
+                    transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
+                  }}
+                  onTransitionEnd={handleTransitionEnd}
+                >
+                  {extendedPartnerBrands.map((brand, idx) => (
+                    <div key={`${brand.id}-${idx}`} className="partner-carousel-card">
+                      <div className="partner-carousel-image">
+                        <img loading="lazy" src={brand.img} alt={brand.name} />
+                        <div className="partner-carousel-overlay">
+                          <h4>{brand.name}</h4>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+              
+              <button 
+                className="partners-carousel-btn next" 
+                onClick={() => scrollPartners(1)}
+                aria-label="Next partners"
+              >
+                <FaChevronRight aria-hidden="true" />
+              </button>
             </div>
-            
-            <button 
-              className="partners-carousel-btn next" 
-              onClick={() => scrollPartners(1)}
-              aria-label="Next"
-            >
-              <FaChevronRight />
-            </button>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 };
 

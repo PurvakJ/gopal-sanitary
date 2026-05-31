@@ -1,4 +1,4 @@
-/* CatalogPage.css - Updated with Rasputin Font */
+/* CatalogPage.css - Updated with Load More Functionality */
 
 * {
   margin: 0;
@@ -196,6 +196,14 @@
   margin: 60px 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.catalog-header-left {
+  display: flex;
+  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -242,12 +250,21 @@
   border-radius: 2px;
 }
 
-/* Catalog Images Grid - Fixed for full image display */
+.catalog-count {
+  font-size: 14px;
+  color: #666;
+  background: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Catalog Images Grid */
 .catalog-images-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .catalog-image-card {
@@ -257,9 +274,19 @@
   transition: all 0.4s ease;
   cursor: pointer;
   width: 100%;
-  height: 100%;
-  height: auto;
   position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .catalog-image-card img {
@@ -281,6 +308,173 @@
 
 .catalog-image-card:hover img {
   transform: scale(1.02);
+}
+
+/* Load More Container */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+
+.load-more-btn {
+  background: linear-gradient(135deg, #d9b89c 0%, #c49a6c 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(217, 184, 156, 0.3);
+}
+
+.load-more-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 184, 156, 0.4);
+  background: linear-gradient(135deg, #c49a6c 0%, #b8895a 100%);
+}
+
+.load-more-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.load-more-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Spinner for Load More Button */
+.load-more-btn.loading {
+  position: relative;
+  padding-left: 50px;
+}
+
+.load-more-btn.loading::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* End of Catalog Message */
+.end-of-catalog {
+  text-align: center;
+  margin: 40px 0 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+  border-radius: 20px;
+}
+
+.end-of-catalog p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.back-btn-secondary {
+  background: transparent;
+  color: #d9b89c;
+  border: 2px solid #d9b89c;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.back-btn-secondary:hover {
+  background: #d9b89c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Scroll to Top Button (if needed) */
+.scroll-to-top-catalog {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #d9b89c;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top-catalog.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top-catalog:hover {
+  background: #c49a6c;
+  transform: translateY(-3px);
+}
+
+/* Image Loading Skeleton */
+.image-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  min-height: 250px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Progress Bar for Loading More */
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background: #f0f0f0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #d9b89c, #c49a6c);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  width: 0%;
 }
 
 /* Responsive Design */
@@ -312,6 +506,16 @@
       min-height: 220px;
       max-height: 600px;
   }
+  
+  .catalog-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .catalog-header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 768px) {
@@ -339,17 +543,19 @@
   }
   
   .catalog-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
       margin: 40px 0 30px;
+  }
+  
+  .catalog-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
   
   .catalog-title {
       font-size: 24px;
   }
   
-  /* 2 images per row on tablet */
   .catalog-images-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -357,8 +563,13 @@
   
   .catalog-image-card img {
       min-height: 200px;
-      max-height: 50px;
+      max-height: 500px;
       padding: 8px;
+  }
+  
+  .load-more-btn {
+    padding: 12px 30px;
+    font-size: 14px;
   }
 }
 
@@ -412,6 +623,22 @@
   .catalog-title {
       font-size: 20px;
   }
+  
+  .catalog-count {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .load-more-btn {
+    padding: 10px 25px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .end-of-catalog p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -428,5 +655,93 @@
   .catalog-image-card img {
       min-height: 200px;
       max-height: 400px;
+  }
+}
+
+/* Animation for new images loading */
+.catalog-image-card {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger animation for images */
+.catalog-image-card:nth-child(1) { animation-delay: 0s; }
+.catalog-image-card:nth-child(2) { animation-delay: 0.05s; }
+.catalog-image-card:nth-child(3) { animation-delay: 0.1s; }
+.catalog-image-card:nth-child(4) { animation-delay: 0.15s; }
+.catalog-image-card:nth-child(5) { animation-delay: 0.2s; }
+.catalog-image-card:nth-child(6) { animation-delay: 0.25s; }
+.catalog-image-card:nth-child(7) { animation-delay: 0.3s; }
+.catalog-image-card:nth-child(8) { animation-delay: 0.35s; }
+.catalog-image-card:nth-child(9) { animation-delay: 0.4s; }
+.catalog-image-card:nth-child(10) { animation-delay: 0.45s; }
+
+/* Tooltip for image count */
+.catalog-count {
+  position: relative;
+}
+
+.catalog-count:hover::before {
+  content: "Total products in catalog";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Empty state styling */
+.empty-catalog {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f8f8;
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+.empty-catalog p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Print styles for better printing */
+@media print {
+  .catalog-hero {
+    background-attachment: scroll;
+    height: 200px;
+  }
+  
+  .load-more-container,
+  .back-btn,
+  .scroll-to-top-catalog {
+    display: none;
+  }
+  
+  .catalog-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .catalog-image-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

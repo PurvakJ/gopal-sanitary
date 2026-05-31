@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -48,23 +47,24 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="navbar-container">
-        <Link to="/" className="logo" onClick={closeMenu}>
+        <Link to="/" className="logo" onClick={closeMenu} aria-label="Homepage">
           GOPAL <span>SANITARY</span>
         </Link>
 
         {/* Mobile Menu Icon - Hamburger */}
-        <div className="mobile-menu" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
+        <div className="mobile-menu" onClick={toggleMenu} aria-label="Menu">
+          {isOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
         </div>
 
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu ${isOpen ? 'active' : ''}`} role="navigation">
           <li>
             <Link 
               to="/" 
               className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} 
               onClick={closeMenu}
+              aria-current={location.pathname === '/' ? 'page' : undefined}
             >
               Home
             </Link>
@@ -74,6 +74,7 @@ function Navbar() {
               to="/catalog" 
               className={`nav-link ${location.pathname === '/catalog' ? 'active' : ''}`} 
               onClick={closeMenu}
+              aria-current={location.pathname === '/catalog' ? 'page' : undefined}
             >
               Catalog
             </Link>
@@ -83,6 +84,7 @@ function Navbar() {
               to="/about" 
               className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} 
               onClick={closeMenu}
+              aria-current={location.pathname === '/about' ? 'page' : undefined}
             >
               About
             </Link>
@@ -92,6 +94,7 @@ function Navbar() {
               to="/contact" 
               className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} 
               onClick={closeMenu}
+              aria-current={location.pathname === '/contact' ? 'page' : undefined}
             >
               Contact
             </Link>

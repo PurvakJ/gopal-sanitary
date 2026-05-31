@@ -1,4 +1,3 @@
-// Footer.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaArrowUp, FaBuilding, FaStore } from 'react-icons/fa';
@@ -30,7 +29,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="footer-content">
         {/* Company Info Section */}
         <div className="footer-section">
@@ -39,33 +38,33 @@ function Footer() {
             Your Trusted Partner for Premium Sanitary Solutions Since 1995. 
             We provide high-quality bathroom and sanitary products at competitive prices.
           </p>
-          <div className="social-icons">
+          <div className="social-icons" aria-label="Social media links">
             <a 
               href="https://www.instagram.com/gopal_sanitary_house/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              aria-label="Instagram" 
+              aria-label="Follow us on Instagram" 
               className="social-icon instagram"
             >
-              <FaInstagram />
+              <FaInstagram aria-hidden="true" />
             </a>
             <a 
               href="https://www.justdial.com/Mansa/Goyal-Sanitary-Palace/9999P1652-1652-190912000628-Q3B2_BZDET" 
               target="_blank" 
               rel="noopener noreferrer" 
-              aria-label="Justdial" 
+              aria-label="Visit our Justdial page" 
               className="social-icon justdial"
             >
-              <FaStore />
+              <FaStore aria-hidden="true" />
             </a>
             <a 
               href="https://www.indiamart.com/company/161003270/?srsltid=AfmBOoreP4x6VoHt9bXEWLrxdX5KvXbfSpbqiuinfAGDPtAHFh_NRxY6" 
               target="_blank" 
               rel="noopener noreferrer" 
-              aria-label="IndiaMART" 
+              aria-label="Visit our IndiaMART page" 
               className="social-icon indiamart"
             >
-              <FaBuilding />
+              <FaBuilding aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -73,7 +72,7 @@ function Footer() {
         {/* Quick Links Section */}
         <div className="footer-section">
           <h3>QUICK LINKS</h3>
-          <ul className="footer-links">
+          <ul className="footer-links" role="navigation" aria-label="Footer navigation">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/catalog">Catalog</Link></li>
             <li><Link to="/about">About Us</Link></li>
@@ -84,13 +83,13 @@ function Footer() {
         {/* Products Section */}
         <div className="footer-section">
           <h3>CATALOG</h3>
-          <ul className="footer-links">
-            <li><Link to="/catalog">Wash Basins</Link></li>
-            <li><Link to="/catalog">Faucets</Link></li>
-            <li><Link to="/catalog">Bathtubs</Link></li>
-            <li><Link to="/catalog">Showers</Link></li>
-            <li><Link to="/catalog">Mirrors</Link></li>
-            <li><Link to="/catalog">Grab Rails</Link></li>
+          <ul className="footer-links" role="navigation" aria-label="Product categories">
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Wash Basins' }}>Wash Basins</Link></li>
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Faucets' }}>Faucets</Link></li>
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Bathtubs' }}>Bathtubs</Link></li>
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Showers' }}>Showers</Link></li>
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Mirrors' }}>Mirrors</Link></li>
+            <li><Link to="/catalog" state={{ scrollToCategory: 'Grab Rails' }}>Grab Rails</Link></li>
           </ul>
         </div>
 
@@ -99,19 +98,18 @@ function Footer() {
           <h3>CONTACT INFO</h3>
           <div className="contact-info">
             <p>
-              <FaMapMarkerAlt className="contact-icon" />
+              <FaMapMarkerAlt className="contact-icon" aria-hidden="true" />
               <span>Near Ganga Oil Mill, J.K. Road, Mansa, Punjab - 151505</span>
             </p>
             <p>
-              <FaPhone className="contact-icon" />
-              <span>+91 90562 62171</span>
+              <FaPhone className="contact-icon" aria-hidden="true" />
+              <a href="tel:+919056262171">+91 90562 62171</a>
             </p>
             <p>
-              <FaEnvelope className="contact-icon" />
-              <span>info@gopalsanitary.com</span>
+              <FaEnvelope className="contact-icon" aria-hidden="true" />
+              <a href="mailto:info@gopalsanitary.com">info@gopalsanitary.com</a>
             </p>
           </div>
-
         </div>
       </div>
 
@@ -128,7 +126,7 @@ function Footer() {
         onClick={scrollToTop} 
         aria-label="Scroll to top"
       >
-        <FaArrowUp />
+        <FaArrowUp aria-hidden="true" />
       </button>
     </footer>
   );

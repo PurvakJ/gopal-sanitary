@@ -1,11 +1,13 @@
-// CatalogPage.jsx
 import { useLocation } from 'react-router-dom';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './CatalogPage.css';
 
 const CatalogPage = () => {
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [catalogImages, setCatalogImages] = useState([]);
+  const [visibleImages, setVisibleImages] = useState(20);
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
   // Partner brands with their catalog images
@@ -588,85 +590,163 @@ const CatalogPage = () => {
     { id: 9, name: 'ZERO-B', img: 'https://www.zerobonline.com/wp-content/uploads/2023/08/ZB-Logo-social-share2.jpg' },
   ];
 
-// Effect to handle brand selection from navigation state
-useEffect(() => {
-  const selectedBrandFromState = location.state?.selectedBrand;
-  const savedBrand = localStorage.getItem('selectedCatalogBrand');
-  const brandToLoad = selectedBrandFromState || savedBrand;
-  
-  if (brandToLoad && partnersCatalog[brandToLoad]) {
-    setSelectedBrand(brandToLoad);
-    setCatalogImages(partnersCatalog[brandToLoad].images);
-    localStorage.removeItem('selectedCatalogBrand');
-  }
-}, [location.state, partnersCatalog]);
+  // Load more images function
+  const loadMoreImages = useCallback(() => {
+    if (visibleImages < catalogImages.length) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setVisibleImages(prev => Math.min(prev + 20, catalogImages.length));
+        setIsLoading(false);
+      }, 500);
+    }
+  }, [visibleImages, catalogImages.length]);
+
+  // Reset visible images when brand changes
+  useEffect(() => {
+    setVisibleImages(20);
+  }, [selectedBrand]);
+
+  // Effect to handle brand selection from navigation state
+  useEffect(() => {
+    const selectedBrandFromState = location.state?.selectedBrand;
+    const savedBrand = localStorage.getItem('selectedCatalogBrand');
+    const brandToLoad = selectedBrandFromState || savedBrand;
+    
+    if (brandToLoad && partnersCatalog[brandToLoad]) {
+      setSelectedBrand(brandToLoad);
+      setCatalogImages(partnersCatalog[brandToLoad].images);
+      localStorage.removeItem('selectedCatalogBrand');
+    }
+  }, [location.state, partnersCatalog]);
 
   const handleBrandClick = (brandName) => {
     setSelectedBrand(brandName);
     setCatalogImages(partnersCatalog[brandName]?.images || []);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const goBack = () => {
     setSelectedBrand(null);
     setCatalogImages([]);
+    setVisibleImages(20);
+  };
+
+  // Get current visible images
+  const currentVisibleImages = catalogImages.slice(0, visibleImages);
+  const hasMore = visibleImages < catalogImages.length;
+
+  // Brand name for title
+  const getBrandTitle = () => {
+    if (!selectedBrand) return 'Our Catalog';
+    return `${selectedBrand} Catalog - Premium Sanitary Products`;
+  };
+
+  const getBrandDescription = () => {
+    if (!selectedBrand) return 'Explore premium sanitary products from trusted brands';
+    return `View complete ${selectedBrand} catalog featuring high-quality bathroom fittings, faucets, and sanitaryware`;
   };
 
   return (
-    <div className="catalog-page">
-      {/* Hero Section */}
-      <section className="catalog-hero">
-        <div className="catalog-hero-overlay">
-          <div className="container">
-            <h1 className="catalog-hero-title">Our Catalog</h1>
-            <p className="catalog-hero-subtitle">Explore premium products from trusted brands</p>
-            <div className="catalog-hero-line"></div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>{getBrandTitle()} | Gopal Sanitary House</title>
+        <meta name="description" content={getBrandDescription()} />
+        <meta name="keywords" content={`${selectedBrand || 'sanitary'}, bathroom fittings, faucets, sanitaryware, catalog`} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://yourdomain.com/catalog${selectedBrand ? `?brand=${selectedBrand.toLowerCase()}` : ''}`} />
+      </Helmet>
 
-      <div className="container">
-        {!selectedBrand ? (
-          <>
-            <div className="section-header">
-              <h2 className="section-title">OUR PARTNER BRANDS</h2>
-              <p className="section-subtitle">Click on any brand to view their catalog</p>
+      <div className="catalog-page">
+        {/* Hero Section */}
+        <section className="catalog-hero">
+          <div className="catalog-hero-overlay">
+            <div className="container">
+              <h1 className="catalog-hero-title">{getBrandTitle()}</h1>
+              <p className="catalog-hero-subtitle">{getBrandDescription()}</p>
+              <div className="catalog-hero-line"></div>
             </div>
-            <div className="brands-grid">
-              {brands.map((brand) => (
-                <div 
-                  key={brand.id} 
-                  className="brand-card"
-                  onClick={() => handleBrandClick(brand.name)}
-                >
-                  <div className="brand-image-wrapper">
-                    <img src={brand.img} alt={brand.name} />
-                    <div className="brand-overlay">
-                      <h3 className="brand-name-hover">{brand.name}</h3>
+          </div>
+        </section>
+
+        <div className="container">
+          {!selectedBrand ? (
+            <>
+              <div className="section-header">
+                <h2 className="section-title">OUR PARTNER BRANDS</h2>
+                <p className="section-subtitle">Click on any brand to view their catalog</p>
+              </div>
+              <div className="brands-grid">
+                {brands.map((brand) => (
+                  <div 
+                    key={brand.id} 
+                    className="brand-card"
+                    onClick={() => handleBrandClick(brand.name)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyPress={(e) => e.key === 'Enter' && handleBrandClick(brand.name)}
+                  >
+                    <div className="brand-image-wrapper">
+                      <img loading="lazy" src={brand.img} alt={brand.name} />
+                      <div className="brand-overlay">
+                        <h3 className="brand-name-hover">{brand.name}</h3>
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="catalog-header">
+                <button className="back-btn" onClick={goBack} aria-label="Back to brands">
+                  ← Back to Brands
+                </button>
+                <h2 className="catalog-title">{selectedBrand} Catalog</h2>
+                <p className="catalog-count">Showing {currentVisibleImages.length} of {catalogImages.length} products</p>
+              </div>
+              <div className="catalog-images-grid">
+                {currentVisibleImages.map((img, index) => (
+                  <div key={index} className="catalog-image-card">
+                    <img 
+                      loading="lazy" 
+                      src={img} 
+                      alt={`${selectedBrand} product ${index + 1}`}
+                      onError={(e) => {
+                        e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Load More Button */}
+              {hasMore && (
+                <div className="load-more-container">
+                  <button 
+                    className="load-more-btn" 
+                    onClick={loadMoreImages}
+                    disabled={isLoading}
+                    aria-label="Load more products"
+                  >
+                    {isLoading ? 'Loading...' : `Load More Products (${catalogImages.length - visibleImages} remaining)`}
+                  </button>
                 </div>
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="catalog-header">
-              <button className="back-btn" onClick={goBack}>
-                ← Back to Brands
-              </button>
-              <h2 className="catalog-title">{selectedBrand} Catalog</h2>
-            </div>
-            <div className="catalog-images-grid">
-              {catalogImages.map((img, index) => (
-                <div key={index} className="catalog-image-card">
-                  <img src={img} alt={`${selectedBrand} product ${index + 1}`} />
+              )}
+              
+              {/* End of catalog message */}
+              {!hasMore && catalogImages.length > 0 && (
+                <div className="end-of-catalog">
+                  <p>🎉 You've reached the end of {selectedBrand} catalog</p>
+                  <button className="back-btn-secondary" onClick={goBack}>
+                    Browse Other Brands
+                  </button>
                 </div>
-              ))}
-            </div>
-          </>
-        )}
+              )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
