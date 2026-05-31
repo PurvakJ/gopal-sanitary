@@ -646,14 +646,59 @@ const CatalogPage = () => {
     return `View complete ${selectedBrand} catalog featuring high-quality bathroom fittings, faucets, and sanitaryware`;
   };
 
-  return (
+return (
     <>
       <Helmet>
-        <title>{getBrandTitle()} | Gopal Sanitary House</title>
+        <title>{getBrandTitle()} | Premium Bathroom Fittings Catalog | Gopal Sanitary House, Mansa</title>
         <meta name="description" content={getBrandDescription()} />
-        <meta name="keywords" content={`${selectedBrand || 'sanitary'}, bathroom fittings, faucets, sanitaryware, catalog`} />
+        <meta name="keywords" content={`${selectedBrand || 'sanitary products'}, ${selectedBrand ? selectedBrand.toLowerCase() + ' catalog' : 'bathroom fittings catalog'}, premium bathroom fittings, faucets, sanitaryware, wash basins, showers, Gopal Sanitary House Mansa, sanitary store Mansa`} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://yourdomain.com/catalog${selectedBrand ? `?brand=${selectedBrand.toLowerCase()}` : ''}`} />
+        <meta name="author" content="Gopal Sanitary House, Mansa Punjab" />
+        <meta name="geo.region" content="IN-PB" />
+        <meta name="geo.placename" content="Mansa" />
+        <link rel="canonical" href={`https://gopalsanitaryhouse.com/catalog${selectedBrand ? `?brand=${selectedBrand.toLowerCase()}` : ''}`} />
+        <meta property="og:title" content={`${getBrandTitle()} | Gopal Sanitary House, Mansa`} />
+        <meta property="og:description" content={getBrandDescription()} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://gopalsanitaryhouse.com/catalog${selectedBrand ? `?brand=${selectedBrand.toLowerCase()}` : ''}`} />
+        <meta property="og:site_name" content="Gopal Sanitary House" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${getBrandTitle()} | Gopal Sanitary House`} />
+        <meta name="twitter:description" content={getBrandDescription()} />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "${getBrandTitle()}",
+              "description": "${getBrandDescription().replace(/"/g, '\\"')}",
+              "numberOfItems": ${catalogImages.length},
+              "itemListElement": ${JSON.stringify(catalogImages.slice(0, 10).map((img, idx) => ({
+                "@type": "ListItem",
+                "position": idx + 1,
+                "item": {
+                  "@type": "Product",
+                  "name": `${selectedBrand || 'Sanitary'} Product ${idx + 1}`,
+                  "brand": {
+                    "@type": "Brand",
+                    "name": selectedBrand || "Premium Brand"
+                  },
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "INR",
+                    "price": "Contact for Price",
+                    "seller": {
+                      "@type": "Organization",
+                      "name": "Gopal Sanitary House, Mansa"
+                    }
+                  }
+                }
+              })))}
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="catalog-page">
@@ -664,6 +709,9 @@ const CatalogPage = () => {
               <h1 className="catalog-hero-title">{getBrandTitle()}</h1>
               <p className="catalog-hero-subtitle">{getBrandDescription()}</p>
               <div className="catalog-hero-line"></div>
+              {!selectedBrand && (
+                <p className="catalog-hero-cta">Browse our extensive collection of premium bathroom fittings and sanitaryware</p>
+              )}
             </div>
           </div>
         </section>
@@ -672,8 +720,9 @@ const CatalogPage = () => {
           {!selectedBrand ? (
             <>
               <div className="section-header">
-                <h2 className="section-title">OUR PARTNER BRANDS</h2>
-                <p className="section-subtitle">Click on any brand to view their catalog</p>
+                <h2 className="section-title">OUR PREMIUM PARTNER BRANDS</h2>
+                <p className="section-subtitle">Click on any brand to explore their complete catalog available at Gopal Sanitary House, Mansa</p>
+                <div className="section-line"></div>
               </div>
               <div className="brands-grid">
                 {brands.map((brand) => (
@@ -684,11 +733,13 @@ const CatalogPage = () => {
                     role="button"
                     tabIndex={0}
                     onKeyPress={(e) => e.key === 'Enter' && handleBrandClick(brand.name)}
+                    aria-label={`View ${brand.name} catalog - Premium bathroom fittings available at Gopal Sanitary House, Mansa`}
                   >
                     <div className="brand-image-wrapper">
-                      <img loading="lazy" src={brand.img} alt={brand.name} />
+                      <img loading="lazy" src={brand.img} alt={`${brand.name} - Authorized dealer at Gopal Sanitary House, Mansa, Punjab`} />
                       <div className="brand-overlay">
                         <h3 className="brand-name-hover">{brand.name}</h3>
+                        <p className="brand-catalog-link">View Catalog →</p>
                       </div>
                     </div>
                   </div>
@@ -698,23 +749,51 @@ const CatalogPage = () => {
           ) : (
             <>
               <div className="catalog-header">
-                <button className="back-btn" onClick={goBack} aria-label="Back to brands">
-                  ← Back to Brands
+                <button className="back-btn" onClick={goBack} aria-label="Back to all brands">
+                  ← Back to All Brands
                 </button>
-                <h2 className="catalog-title">{selectedBrand} Catalog</h2>
-                <p className="catalog-count">Showing {currentVisibleImages.length} of {catalogImages.length} products</p>
+                <h2 className="catalog-title">{selectedBrand} Collection</h2>
+                <p className="catalog-subtitle">Premium {selectedBrand} bathroom fittings and sanitaryware available at Gopal Sanitary House, Mansa</p>
+                <p className="catalog-count">Showing {currentVisibleImages.length} of {catalogImages.length} premium products</p>
               </div>
               <div className="catalog-images-grid">
                 {currentVisibleImages.map((img, index) => (
                   <div key={index} className="catalog-image-card">
-                    <img 
-                      loading="lazy" 
-                      src={img} 
-                      alt={`${selectedBrand} product ${index + 1}`}
-                      onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
-                      }}
-                    />
+                    <div className="catalog-image-wrapper">
+                      <img 
+                        loading="lazy" 
+                        src={img} 
+                        alt={`${selectedBrand} premium bathroom product ${index + 1} - Available at Gopal Sanitary House, Mansa, Punjab`}
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+                        }}
+                      />
+                      <div className="catalog-image-overlay">
+                        <p className="enquire-text">For Price & Availability</p>
+                        <div className="enquire-buttons">
+                          <a 
+                            href={`tel:+919056262171`}
+                            className="enquire-call"
+                            aria-label="Call for price inquiry"
+                          >
+                            Call Now
+                          </a>
+                          <a 
+                            href={`https://wa.me/919056262171?text=Hello%2C%20I%27m%20interested%20in%20${encodeURIComponent(selectedBrand)}%20product%20from%20Gopal%20Sanitary%20House%2C%20Mansa.%20Please%20share%20price%20and%20details.`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="enquire-whatsapp"
+                            aria-label="Inquire on WhatsApp"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="catalog-image-info">
+                      <p className="product-brand">{selectedBrand}</p>
+                      <p className="product-location">Gopal Sanitary House, Mansa</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -728,7 +807,7 @@ const CatalogPage = () => {
                     disabled={isLoading}
                     aria-label="Load more products"
                   >
-                    {isLoading ? 'Loading...' : `Load More Products (${catalogImages.length - visibleImages} remaining)`}
+                    {isLoading ? 'Loading...' : `Load More ${selectedBrand} Products (${catalogImages.length - visibleImages} remaining)`}
                   </button>
                 </div>
               )}
@@ -736,15 +815,67 @@ const CatalogPage = () => {
               {/* End of catalog message */}
               {!hasMore && catalogImages.length > 0 && (
                 <div className="end-of-catalog">
-                  <p>🎉 You've reached the end of {selectedBrand} catalog</p>
+                  <p>🎉 You've explored the complete {selectedBrand} collection at Gopal Sanitary House, Mansa</p>
+                  <p className="end-of-catalog-message">For bulk orders, special pricing, or any inquiries, please contact us:</p>
+                  <div className="end-of-catalog-contacts">
+                    <a href="tel:+919056262171" className="contact-phone">📞 Call: +91 90562 62171</a>
+                    <a href="https://wa.me/919056262171" target="_blank" rel="noopener noreferrer" className="contact-whatsapp">💬 WhatsApp: +91 90562 62171</a>
+                    <a href="mailto:gopalsanitaryhousemansa@gmail.com" className="contact-email">✉️ Email: gopalsanitaryhousemansa@gmail.com</a>
+                  </div>
                   <button className="back-btn-secondary" onClick={goBack}>
-                    Browse Other Brands
+                    Browse Other Premium Brands
                   </button>
+                </div>
+              )}
+              
+              {/* Show contact info when no products */}
+              {catalogImages.length === 0 && !isLoading && (
+                <div className="no-products-message">
+                  <p>📦 Catalog for {selectedBrand} is being updated.</p>
+                  <p>For immediate assistance and product details, please contact our store in Mansa:</p>
+                  <div className="contact-buttons">
+                    <a href="tel:+919056262171" className="contact-btn call-btn">Call +91 90562 62171</a>
+                    <a href="https://wa.me/919056262171" target="_blank" rel="noopener noreferrer" className="contact-btn whatsapp-btn">WhatsApp Inquiry</a>
+                  </div>
                 </div>
               )}
             </>
           )}
         </div>
+
+        {/* Why Choose Us Section - Only on brand listing page */}
+        {!selectedBrand && (
+          <section className="why-choose-section">
+            <div className="container">
+              <div className="section-header">
+                <h2 className="section-title">Why Choose Gopal Sanitary House?</h2>
+                <div className="section-line"></div>
+              </div>
+              <div className="why-choose-grid">
+                <div className="why-choose-item">
+                  <div className="why-choose-icon">✅</div>
+                  <h3>100% Genuine Products</h3>
+                  <p>Authorized dealer for all premium brands with manufacturer warranty</p>
+                </div>
+                <div className="why-choose-item">
+                  <div className="why-choose-icon">🏪</div>
+                  <h3>Visit Our Store in Mansa</h3>
+                  <p>See products in person at our showroom near Ganga Oil Mill, J.K. Road</p>
+                </div>
+                <div className="why-choose-item">
+                  <div className="why-choose-icon">🚚</div>
+                  <h3>Pan India Delivery</h3>
+                  <p>We ship across India with secure packaging</p>
+                </div>
+                <div className="why-choose-item">
+                  <div className="why-choose-icon">🔧</div>
+                  <h3>Professional Installation</h3>
+                  <p>Expert installation services available</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </>
   );

@@ -61,7 +61,7 @@ const HomePage = () => {
     { 
       id: 1, 
       img: 'https://i.postimg.cc/RZn8H2xB/f77a255170d6ea2e4adcfc40d11a3084.jpg', 
-      title: 'How to Choose the Perfect Bathroom Faucet', 
+      title: 'How to Choose the Perfect Bathroom Faucet for Your Mansa Home', 
       excerpt: 'Discover the key factors to consider when selecting a faucet for your bathroom, from finish types to water efficiency and installation requirements.',
       date: 'March 15, 2024',
       author: 'By Design Expert'
@@ -69,15 +69,15 @@ const HomePage = () => {
     { 
       id: 2, 
       img: 'https://i.pinimg.com/1200x/a8/5e/5e/a85e5e565a18b3261bd5f7d0c97d8b52.jpg', 
-      title: 'Top 5 Luxury Shower Systems for 2024', 
-      excerpt: 'Upgrade your daily routine with these premium shower systems featuring rainfall heads, body jets, and smart temperature controls.',
+      title: 'Top 5 Luxury Shower Systems Available at Gopal Sanitary House', 
+      excerpt: 'Upgrade your daily routine with these premium shower systems featuring rainfall heads, body jets, and smart temperature controls, now available in Mansa.',
       date: 'March 10, 2024',
       author: 'By Luxury Editor'
     },
     { 
       id: 3, 
       img: 'https://i.pinimg.com/736x/7e/10/bb/7e10bb2fec07ebee23c0ae633965b246.jpg', 
-      title: 'Maintenance Tips for Your Kitchen Sink Faucet', 
+      title: 'Maintenance Tips for Your Kitchen Sink Faucet (Expert Advice from Mansa)', 
       excerpt: 'Extend the life of your kitchen faucet with these simple maintenance practices, from cleaning aerators to preventing leaks.',
       date: 'March 5, 2024',
       author: 'By Home Care Expert'
@@ -208,20 +208,97 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Gopal Sanitary House | Premium Sanitary Solutions Since 1995 | Mansa, Punjab</title>
-        <meta name="description" content="India's trusted sanitary store offering premium bathroom fittings, faucets, showers, and sanitaryware from top brands like Jaquar, VGUARD, KITEC. 28+ years of excellence. Visit our store in Mansa, Punjab." />
-        <meta name="keywords" content="sanitary store Mansa, bathroom fittings, faucets, sanitaryware, Jaquar, VGUARD, KITEC, wash basins, showers, bathtubs, Punjab sanitary shop" />
+        <title>Gopal Sanitary House | Best Sanitary Store in Mansa, Punjab | Premium Bathroom Fittings</title>
+        <meta name="description" content="Gopal Sanitary House in Mansa, Punjab - Your trusted sanitary store since 1995. Shop premium bathroom fittings, faucets, showers, and sanitaryware from top brands like Jaquar, VGUARD, KITEC. Best prices & quality guaranteed." />
+        <meta name="keywords" content="Gopal Sanitary House Mansa, sanitary store in Mansa, bathroom fittings Mansa, faucets Mansa, sanitaryware Punjab, Jaquar dealer Mansa, VGUARD Punjab, KITEC Mansa, wash basins, showers, bathtubs, sanitary shop near me, bathroom accessories Mansa" />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Gopal Sanitary House" />
-        <link rel="canonical" href="https://yourdomain.com" />
-        <meta property="og:title" content="Gopal Sanitary House - Premium Sanitary Solutions" />
-        <meta property="og:description" content="Your trusted partner for premium bathroom and sanitary products since 1995" />
+        <meta name="author" content="Gopal Sanitary House, Mansa Punjab" />
+        <meta name="geo.region" content="IN-PB" />
+        <meta name="geo.placename" content="Mansa" />
+        <meta name="geo.position" content="29.9885;75.3843" />
+        <meta name="ICBM" content="29.9885, 75.3843" />
+        <link rel="canonical" href="https://gopalsanitaryhouse.com" />
+        <meta property="og:title" content="Gopal Sanitary House - Premium Sanitary Solutions in Mansa, Punjab" />
+        <meta property="og:description" content="Your trusted partner for premium bathroom and sanitary products in Mansa since 1995. Shop from top brands at best prices." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta property="og:url" content="https://gopalsanitaryhouse.com" />
+        <meta property="og:image" content="https://gopalsanitaryhouse.com/og-image.jpg" />
+        <meta property="og:site_name" content="Gopal Sanitary House" />
+        <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gopal Sanitary House - Premium Sanitary Solutions" />
-        <meta name="twitter:description" content="Your trusted partner for premium bathroom and sanitary products since 1995" />
+        <meta name="twitter:title" content="Gopal Sanitary House - Best Sanitary Store in Mansa, Punjab" />
+        <meta name="twitter:description" content="India's trusted sanitary store offering premium bathroom fittings, faucets, showers, and sanitaryware from top brands. 28+ years of excellence. Visit our store in Mansa, Punjab." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Gopal Sanitary House",
+              "image": "https://gopalsanitaryhouse.com/logo.jpg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Main Market, Near Bus Stand",
+                "addressLocality": "Mansa",
+                "addressRegion": "Punjab",
+                "postalCode": "151505",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 29.9885,
+                "longitude": 75.3843
+              },
+              "url": "https://gopalsanitaryhouse.com",
+              "telephone": "+91-9876543210",
+              "priceRange": "₹₹",
+              "openingHours": "Mo-Sa 10:00-20:00",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "10:00",
+                  "closes": "20:00"
+                }
+              ],
+              "sameAs": [
+                "https://www.facebook.com/gopalsanitaryhouse",
+                "https://www.instagram.com/gopalsanitaryhouse"
+              ],
+              "brand": ["VGUARD", "JAQUAR", "KITEC", "NOVA", "EROS", "AROFIC", "DEEPALI", "SHEENZ", "ZERO-B"],
+              "makesOffer": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Bathroom Faucets",
+                    "category": "Bathroom Fittings"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Sanitaryware",
+                    "category": "Bathroom Products"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Showers",
+                    "category": "Bathroom Fittings"
+                  }
+                }
+              ],
+              "areaServed": {
+                "@type": "City",
+                "name": "Mansa"
+              },
+              "description": "Gopal Sanitary House is the leading sanitary store in Mansa, Punjab, offering premium bathroom fittings, faucets, showers, and sanitaryware from top brands like Jaquar, VGUARD, and KITEC since 1995."
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="homepage">
@@ -235,10 +312,10 @@ const HomePage = () => {
                   key={index}
                   className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
                 >
-                  <img loading="lazy" src={img} alt={`Luxury bathroom showcase ${index + 1}`} />
+                  <img loading="lazy" src={img} alt={`Luxury bathroom showcase ${index + 1} - Gopal Sanitary House Mansa`} />
                   <div className="carousel-caption">
                     <h2 className="animate-text">LUXURY FAUCETS COLLECTION</h2>
-                    <p className="animate-text-delay">Visit Store Today</p>
+                    <p className="animate-text-delay">Visit Our Store in Mansa Today</p>
                   </div>
                 </div>
               ))}
@@ -264,17 +341,17 @@ const HomePage = () => {
             <div className="luxury-content">
               <div className="luxury-images-stack">
                 <div className="stack-image stack-image-1">
-                  <img loading="lazy" src="https://i.postimg.cc/VvfDrZP0/1-(2).jpg" alt="Luxury Bathroom Design" />
+                  <img loading="lazy" src="https://i.postimg.cc/VvfDrZP0/1-(2).jpg" alt="Luxury Bathroom Design - Gopal Sanitary House Mansa" />
                 </div>
                 <div className="stack-image stack-image-2">
-                  <img loading="lazy" src="https://i.postimg.cc/nrF0jSf0/4.jpg" alt="Modern Bathroom Interior" />
+                  <img loading="lazy" src="https://i.postimg.cc/nrF0jSf0/4.jpg" alt="Modern Bathroom Interior by Gopal Sanitary House" />
                 </div>
               </div>
               <div className="luxury-text">
                 <h2>Where Luxury <span>Meets Comfort</span></h2>
                 <p>
-                  Luxury is at the heart of everything we do. From the finest materials to meticulous craftsmanship, 
-                  our products are designed to exude elegance and sophistication.
+                  At Gopal Sanitary House in Mansa, luxury is at the heart of everything we do. From the finest materials to meticulous craftsmanship, 
+                  our products are designed to exude elegance and sophistication. Visit our sanitary store in Mansa to experience premium quality.
                 </p>
                 <Link to="/catalog" className="btn-show-categories">
                   Show more categories <i className="fas fa-arrow-right"></i>
@@ -289,12 +366,12 @@ const HomePage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">OUR COLLECTION</h2>
-              <p className="section-subtitle">Discover our premium range of luxury faucets</p>
+              <p className="section-subtitle">Discover our premium range of luxury faucets at Gopal Sanitary House, Mansa</p>
             </div>
             <div className="collage-grid">
               {collageImages.map((image, index) => (
                 <div key={image.id} className={`collage-item collage-item-${index + 1}`}>
-                  <img loading="lazy" src={image.img} alt={image.title} />
+                  <img loading="lazy" src={image.img} alt={`${image.title} - Available at Gopal Sanitary House Mansa`} />
                   <div className="collage-overlay">
                     <span>{image.title}</span>
                   </div>
@@ -309,7 +386,7 @@ const HomePage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">PRODUCT CATEGORIES</h2>
-              <p className="section-subtitle">Explore our wide range of premium bathroom products</p>
+              <p className="section-subtitle">Explore our wide range of premium bathroom products available in Mansa</p>
             </div>
             <div className="categories-grid">
               {productCategories.map((category) => (
@@ -318,7 +395,7 @@ const HomePage = () => {
                     <img 
                       loading="lazy"
                       src={category.image} 
-                      alt={category.name}
+                      alt={`${category.name} - Gopal Sanitary House Mansa`}
                       className="category-image"
                     />
                     <div className="category-overlay">
@@ -339,7 +416,7 @@ const HomePage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">OUR PREMIUM BRANDS</h2>
-              <p className="section-subtitle">Explore catalogs from our trusted partner brands</p>
+              <p className="section-subtitle">Explore catalogs from our trusted partner brands available at Gopal Sanitary House, Mansa</p>
             </div>
             <div className="brand-categories-grid">
               {brandCategoriesFromCatalog.map((brand) => (
@@ -356,7 +433,7 @@ const HomePage = () => {
                     <img 
                       loading="lazy"
                       src={brand.image} 
-                      alt={brand.name}
+                      alt={`${brand.name} - Authorized Dealer in Mansa, Punjab`}
                       className="brand-category-image"
                     />
                     <div className="brand-category-overlay">
@@ -378,13 +455,13 @@ const HomePage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">LATEST COLLECTION</h2>
-              <p className="section-subtitle">Explore our newest arrivals with exclusive offers</p>
+              <p className="section-subtitle">Explore our newest arrivals with exclusive offers at Gopal Sanitary House, Mansa</p>
             </div>
             <div className="latest-grid">
               {latestCollections.map((item) => (
                 <div key={item.id} className="latest-card">
                   <div className="latest-image">
-                    <img loading="lazy" src={item.img} alt={item.title} />
+                    <img loading="lazy" src={item.img} alt={`${item.title} - New Arrival at Gopal Sanitary House Mansa`} />
                   </div>
                   <div className="latest-info">
                     <h3>{item.title}</h3>
@@ -401,13 +478,13 @@ const HomePage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">BEST SELLERS OF THE WEEK</h2>
-              <p className="section-subtitle">Our most popular faucets loved by customers</p>
+              <p className="section-subtitle">Our most popular faucets loved by customers in Mansa and across Punjab</p>
             </div>
             <div className="products-grid">
               {bestsellerProducts.map((product) => (
                 <div key={product.id} className="product-card">
                   <div className="product-image">
-                    <img loading="lazy" src={product.img} alt={product.name} />
+                    <img loading="lazy" src={product.img} alt={`${product.name} - Bestseller at Gopal Sanitary House Mansa`} />
                     <div className="product-badge">Bestseller</div>
                   </div>
                   <div className="product-info">
@@ -428,7 +505,7 @@ const HomePage = () => {
             <div className="section-header">
               <h2 className="section-title">OUR BLOG</h2>
               <p className="section-subtitle">
-                Expert insights, design inspiration, and tips for your perfect bathroom
+                Expert insights, design inspiration, and tips for your perfect bathroom from Gopal Sanitary House, Mansa
               </p>
             </div>
             <div className="blog-grid">
@@ -453,7 +530,7 @@ const HomePage = () => {
             <div className="section-header">
               <h2 className="section-title">PARTNERS WITH US</h2>
               <p className="section-subtitle">
-                We collaborate with the world's leading brands to bring you exceptional quality
+                We collaborate with the world's leading brands to bring you exceptional quality at Gopal Sanitary House, Mansa
               </p>
             </div>
             
@@ -478,7 +555,7 @@ const HomePage = () => {
                   {extendedPartnerBrands.map((brand, idx) => (
                     <div key={`${brand.id}-${idx}`} className="partner-carousel-card">
                       <div className="partner-carousel-image">
-                        <img loading="lazy" src={brand.img} alt={brand.name} />
+                        <img loading="lazy" src={brand.img} alt={`${brand.name} - Available at Gopal Sanitary House Mansa`} />
                         <div className="partner-carousel-overlay">
                           <h4>{brand.name}</h4>
                         </div>

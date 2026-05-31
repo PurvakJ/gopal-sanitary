@@ -49,8 +49,9 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="navbar-container">
-        <Link to="/" className="logo" onClick={closeMenu} aria-label="Homepage">
-          GOPAL <span>SANITARY</span>
+        <Link to="/" className="logo" onClick={closeMenu} aria-label="Gopal Sanitary House Mansa - Homepage">
+          GOPAL <span>SANITARY HOUSE</span>
+          <small className="logo-location">Mansa, Punjab</small>
         </Link>
 
         {/* Mobile Menu Icon - Hamburger */}

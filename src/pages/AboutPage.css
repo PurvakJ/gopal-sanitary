@@ -1,4 +1,4 @@
-/* AboutPage.css - Fixed Hero Section with Working Images & Rasputin Font */
+/* AboutPage.css - Complete Styling for Gopal Sanitary House, Mansa */
 
 * {
   margin: 0;
@@ -98,6 +98,24 @@
   background: #d9b89c;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.about-hero-location {
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 20px;
+  border-radius: 40px;
+  backdrop-filter: blur(5px);
+}
+
+.about-hero-location svg {
+  color: #d9b89c;
 }
 
 @keyframes fadeInUp {
@@ -341,11 +359,20 @@
   background: #fafafa;
 }
 
+.why-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #555555;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
 .why-choose-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .why-card {
@@ -413,7 +440,7 @@
 
 .partners-grid-about {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   align-items: center;
 }
@@ -449,6 +476,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -465,35 +493,144 @@
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 5px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.partner-overlay p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.view-more-brands {
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 40px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-more-brands p {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Store Location Section */
+.store-location-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+  align-items: start;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.location-address,
+.location-hours,
+.location-contact {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.location-address:hover,
+.location-hours:hover,
+.location-contact:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.location-icon {
+  font-size: 28px;
+  color: #d9b89c;
+  flex-shrink: 0;
+}
+
+.location-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.location-info p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.location-info a {
+  color: #d9b89c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.location-info a:hover {
+  color: #c49a6c;
+  text-decoration: underline;
+}
+
+.location-map {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* CTA Section */
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
 }
 
 .cta-content {
   text-align: center;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .cta-content h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #000000;
+  color: #000;
   margin-bottom: 15px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .cta-content p {
   font-size: 16px;
-  color: #555555;
+  color: #000;
   margin-bottom: 30px;
   line-height: 1.6;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cta-button {
@@ -509,6 +646,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
@@ -516,19 +654,47 @@
   background: #c49a6c;
   transform: translateX(5px);
   gap: 15px;
+  color: #ffffff;
+}
+
+.cta-button-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  border: none;
+  padding: 14px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.cta-button-whatsapp:hover {
+  background: #128C7E;
+  transform: translateX(5px);
+  gap: 15px;
+  color: #ffffff;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
   .stats-grid,
-  .values-grid,
-  .why-choose-grid {
+  .values-grid {
       gap: 20px;
   }
   
   .partners-grid-about {
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+  }
+  
+  .why-choose-grid {
+      grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -550,6 +716,11 @@
       grid-template-columns: repeat(2, 1fr);
   }
   
+  .location-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+  }
+  
   .about-hero-title {
       font-size: 42px;
   }
@@ -560,6 +731,10 @@
   
   .cta-content h2 {
       font-size: 32px;
+  }
+  
+  .partners-grid-about {
+      grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -615,6 +790,17 @@
   .values-section {
       background-attachment: scroll;
   }
+  
+  .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .cta-button,
+  .cta-button-whatsapp {
+      width: 80%;
+      justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -642,11 +828,26 @@
       padding: 25px 20px;
   }
   
-  .cta-button {
+  .cta-button,
+  .cta-button-whatsapp {
       padding: 12px 25px;
       font-size: 14px;
+      width: 100%;
   }
-
+  
+  .location-address,
+  .location-hours,
+  .location-contact {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+  }
+  
+  .about-hero-location {
+      font-size: 12px;
+      padding: 6px 15px;
+  }
+  
   .story-section .container{
     margin-top: -100px;
   }
@@ -700,7 +901,10 @@
 .partner-card-about img,
 .value-card,
 .why-card,
-.stat-card {
+.stat-card,
+.location-address,
+.location-hours,
+.location-contact {
   will-change: transform;
   transform: translateZ(0);
 }
