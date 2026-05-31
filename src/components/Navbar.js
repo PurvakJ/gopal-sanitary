@@ -51,7 +51,7 @@ function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={closeMenu} aria-label="Gopal Sanitary House Mansa - Homepage">
           GOPAL <span>SANITARY HOUSE</span>
-          <small className="logo-location">Mansa, Punjab</small>
+          {/*<small className="logo-location">Mansa, Punjab</small>*/}
         </Link>
 
         {/* Mobile Menu Icon - Hamburger */}

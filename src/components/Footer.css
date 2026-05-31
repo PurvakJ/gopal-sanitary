@@ -1,4 +1,4 @@
-/* Footer.css - Updated with Rasputin font */
+/* Footer.css - Complete Styling for Gopal Sanitary House, Mansa */
 
 .footer {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -8,10 +8,48 @@
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-.footer-content {
+.container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 40px 40px;
+  padding: 0 20px;
+}
+
+/* Trust Badges Section */
+.footer-trust-badges {
+  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.trust-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.trust-icon {
+  font-size: 20px;
+  color: #d9b89c;
+}
+
+/* Footer Content */
+.footer-content {
+  padding: 60px 0 40px;
+}
+
+.footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
@@ -42,11 +80,20 @@
   border-radius: 2px;
 }
 
+.footer-location-badge {
+  font-size: 12px;
+  color: #d9b89c;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
 .footer-description {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #e0e0e0;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
@@ -62,7 +109,7 @@
 }
 
 .footer-links a {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -78,11 +125,11 @@
 /* Contact Info */
 .contact-info p {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   margin-bottom: 15px;
   font-size: 14px;
-  color: #ffffff;
+  color: #e0e0e0;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
@@ -90,11 +137,112 @@
   color: #d9b89c;
   font-size: 16px;
   min-width: 20px;
+  margin-top: 2px;
 }
 
-.contact-info span {
-  color: #ffffff;
+.contact-info span,
+.contact-info a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.contact-info a:hover {
+  color: #d9b89c;
+}
+
+.store-name {
+  font-weight: 700;
+  color: #d9b89c;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.business-hours {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Base Social Icon Styles */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon svg {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+/* Instagram Hover Effect */
+.social-icon.instagram:hover {
+  background: radial-gradient(circle at 30% 110%, #ffdb8f, #ff9b44, #d62976, #962fbf, #4f5bd5);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(214, 41, 118, 0.3);
+}
+
+.social-icon.instagram:hover svg {
+  color: #ffffff;
+}
+
+/* Justdial Hover Effect */
+.social-icon.justdial:hover {
+  background: #2a6f8f;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(42, 111, 143, 0.3);
+}
+
+.social-icon.justdial:hover svg {
+  color: #ffffff;
+}
+
+/* IndiaMART Hover Effect */
+.social-icon.indiamart:hover {
+  background: #f15a24;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(241, 90, 36, 0.3);
+}
+
+.social-icon.indiamart:hover svg {
+  color: #ffffff;
+}
+
+/* WhatsApp Hover Effect */
+.social-icon.whatsapp {
+  background: #25D366;
+}
+
+.social-icon.whatsapp svg {
+  color: #ffffff;
+}
+
+.social-icon.whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.social-icon.whatsapp:hover svg {
+  color: #ffffff;
 }
 
 /* Newsletter Section */
@@ -159,23 +307,21 @@
 /* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px 0;
+  padding: 25px 0;
 }
 
 .footer-bottom-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-bottom: 10px;
 }
 
 .footer-bottom p {
   font-size: 14px;
-  color: #ffffff;
+  color: #e0e0e0;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
@@ -185,7 +331,7 @@
 }
 
 .footer-bottom-links a {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -196,68 +342,35 @@
   color: #d9b89c;
 }
 
-/* ==================== */
-/* SOCIAL ICONS - BLACK BY DEFAULT (WITH HIGHER SPECIFICITY) */
-/* ==================== */
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
+.footer-credit {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* Base Social Icon Styles - Force black color */
-.footer .social-icons .social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #ffffff !important;
-  border-radius: 50%;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Link Underline Effects */
+.footer-links a,
+.footer-bottom-links a {
+  position: relative;
 }
 
-/* Force black color for icons */
-.footer .social-icons .social-icon svg {
-  color: #000000 !important;
-  transition: color 0.3s ease;
+.footer-links a::before,
+.footer-bottom-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d9b89c;
+  transition: width 0.3s ease;
 }
 
-/* Instagram Hover Effect */
-.footer .social-icons .social-icon.instagram:hover {
-  background: radial-gradient(circle at 30% 110%, #ffdb8f, #ff9b44, #d62976, #962fbf, #4f5bd5) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(214, 41, 118, 0.3);
-}
-
-.footer .social-icons .social-icon.instagram:hover svg {
-  color: #ffffff !important;
-}
-
-/* Justdial Hover Effect */
-.footer .social-icons .social-icon.justdial:hover {
-  background: #2a6f8f !important;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(42, 111, 143, 0.3);
-}
-
-.footer .social-icons .social-icon.justdial:hover svg {
-  color: #ffffff !important;
-}
-
-/* IndiaMART Hover Effect */
-.footer .social-icons .social-icon.indiamart:hover {
-  background: #f15a24 !important;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(241, 90, 36, 0.3);
-}
-
-.footer .social-icons .social-icon.indiamart:hover svg {
-  color: #ffffff !important;
+.footer-links a:hover::before,
+.footer-bottom-links a:hover::before {
+  width: 100%;
 }
 
 /* Scroll to Top Button */
@@ -294,93 +407,60 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Link Underline Effects */
-.footer-links a,
-.footer-bottom-links a {
-  position: relative;
-}
-
-.footer-links a::before,
-.footer-bottom-links a::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #d9b89c;
-  transition: width 0.3s ease;
-}
-
-.footer-links a:hover::before,
-.footer-bottom-links a:hover::before {
-  width: 100%;
-}
-
-/* Remove the universal selector that was forcing white color on everything */
-/* Instead, specifically target only text elements */
-.footer,
-.footer p,
-.footer h3,
-.footer h4,
-.footer li,
-.footer span:not(.social-icon span),
-.footer a:not(.social-icon),
-.footer .footer-description,
-.footer .contact-info p,
-.footer .contact-info span,
-.footer .footer-bottom p,
-.footer .footer-bottom-links a {
-  color: #ffffff;
-}
-
-/* Override for specific elements that need different colors */
-.footer-section h3 span {
-  color: #d9b89c;
-}
-
-.contact-icon {
-  color: #d9b89c;
-}
-
-/* Input text color */
-.newsletter-input input {
-  color: #ffffff;
-}
-
-.newsletter-input input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 /* ==================== */
 /* RESPONSIVE DESIGN */
 /* ==================== */
 
 @media (max-width: 1200px) {
-  .footer-content {
+  .footer-grid {
     gap: 30px;
-    padding: 50px 30px 30px;
+  }
+  
+  .trust-badges-grid {
+    gap: 20px;
   }
 }
 
 @media (max-width: 992px) {
-  .footer-content {
+  .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+  }
+  
+  .footer-content {
+    padding: 50px 0 30px;
+  }
+  
+  .trust-badges-grid {
+    gap: 15px;
+  }
+  
+  .trust-badge {
+    font-size: 12px;
+  }
+  
+  .trust-icon {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  .footer-content {
+  .footer-trust-badges {
+    display: none;
+  }
+  
+  .footer-grid {
     grid-template-columns: 1fr;
     gap: 35px;
-    padding: 40px 20px 30px;
+  }
+  
+  .footer-content {
+    padding: 40px 0 30px;
   }
   
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
-    padding: 0 20px;
     gap: 10px;
   }
   
@@ -398,7 +478,11 @@
     width: 100%;
   }
   
-  .footer .social-icons .social-icon {
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .social-icon {
     width: 35px;
     height: 35px;
     font-size: 16px;
@@ -411,18 +495,45 @@
     height: 40px;
     font-size: 18px;
   }
-}
-
-@media (max-width: 480px) {
-  .footer-content {
-    padding: 30px 15px 20px;
-  }
   
   .footer-section h3 {
     font-size: 20px;
   }
   
-  .footer .social-icons .social-icon {
+  .footer-section h3::after {
+    width: 40px;
+  }
+  
+  .footer-credit {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    gap: 30px;
+  }
+  
+  .footer-content {
+    padding: 30px 0 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+  }
+  
+  .footer-description {
+    font-size: 13px;
+  }
+  
+  .footer-links a,
+  .contact-info p,
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size: 12px;
+  }
+  
+  .social-icon {
     width: 32px;
     height: 32px;
     font-size: 14px;
@@ -433,6 +544,89 @@
   }
   
   .footer-bottom-links a {
-    font-size: 12px;
+    font-size: 11px;
   }
+  
+  .contact-info p {
+    gap: 8px;
+  }
+  
+  .contact-icon {
+    font-size: 14px;
+    min-width: 18px;
+  }
+  
+  .store-name {
+    font-size: 13px;
+  }
+}
+
+/* Animation for scroll to top button */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-to-top.show {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Print styles */
+@media print {
+  .footer-trust-badges,
+  .scroll-to-top,
+  .newsletter {
+    display: none;
+  }
+  
+  .footer {
+    background: #f8f8f8;
+    color: #000;
+  }
+  
+  .footer-section h3,
+  .footer-section h3 span,
+  .footer-description,
+  .footer-links a,
+  .contact-info p,
+  .contact-info span,
+  .contact-info a,
+  .footer-bottom p,
+  .footer-bottom-links a,
+  .footer-credit {
+    color: #000 !important;
+  }
+  
+  .footer-section h3::after {
+    background: #999;
+  }
+  
+  .contact-icon {
+    color: #999;
+  }
+}
+
+/* Alternative WhatsApp Style - Green background with Black icon */
+.social-icon.whatsapp {
+  background: #25D366;
+}
+
+.social-icon.whatsapp svg {
+  color: #000000;
+}
+
+.social-icon.whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.social-icon.whatsapp:hover svg {
+  color: #ffffff;
 }

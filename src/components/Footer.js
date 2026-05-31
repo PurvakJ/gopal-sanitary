@@ -168,14 +168,11 @@ function Footer() {
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} Gopal Sanitary House, Mansa. All rights reserved.</p>
             <div className="footer-bottom-links">
-              <Link to="/">Privacy Policy</Link>
-              <Link to="/">Terms & Conditions</Link>
-              <Link to="/contact">Sitemap</Link>
-            </div>
-          </div>
-          <p className="footer-credit">
+            <p >
             Premium Sanitary Store in Mansa, Punjab | Authorized Dealer for JAQUAR, VGUARD, KITEC & 50+ Brands
           </p>
+            </div>
+          </div>
         </div>
       </div>
 
