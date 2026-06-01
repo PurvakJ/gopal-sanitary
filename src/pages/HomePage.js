@@ -36,12 +36,12 @@ const HomePage = () => {
   const brandCategoriesFromCatalog = [
     { id: 1, name: 'VGUARD', icon: 'fas fa-plug', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/86/V-Guard_Industries.svg/1280px-V-Guard_Industries.svg.png', brandKey: 'VGUARD' },
     { id: 2, name: 'JAQUAR', icon: 'fas fa-tint', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jaquar_logo.svg/250px-Jaquar_logo.svg.png', brandKey: 'JAQUAR' },
-    { id: 3, name: 'KITEC', icon: 'fas fa-industry', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTryvzpG8NkfNXsqlusu3I92Ywo3VUXUC7vxQ&s', brandKey: 'KITEC' },
+    { id: 3, name: 'GEBERIT', icon: 'fas fa-industry', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdicD30F2fVkcM1TP5ZnhIJwp9dZ3Vo6jUIw&s', brandKey: 'KITEC' },
     { id: 4, name: 'NOVA', icon: 'fas fa-water', image: 'https://media.licdn.com/dms/image/v2/C560BAQHzK_9Ycov6qw/company-logo_200_200/company-logo_200_200/0/1630575485997/nova_plastik_san_tic_a__logo?e=2147483647&v=beta&t=bX0tDdf3LFvKxD0iP2fAkYTk3DO3g8ny-8UM6Kw9qHw', brandKey: 'NOVA' },
     { id: 5, name: 'EROS', icon: 'fas fa-gem', image: 'https://i.pinimg.com/736x/e0/3e/57/e03e570adbacaec736c6d1d865bcc903.jpg', brandKey: 'EROS' },
     { id: 6, name: 'AROFIC', icon: 'fas fa-shower', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQexOvLwKCqfBqsABNAel2tdMKU6BI5lIASw&s', brandKey: 'AROFIC' },
     { id: 7, name: 'DEEPALI', icon: 'fas fa-sink', image: 'https://deepalisinks.com/wp-content/uploads/2021/10/Deepali-Sinks-Logo.png', brandKey: 'DEEPALI' },
-    { id: 8, name: 'SHEENZ', icon: 'fas fa-faucet', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_jRCABpHv6cMdQCVG_F88P4M9PlgEgTsMg&s', brandKey: 'SHEENZ' },
+    { id: 8, name: 'SHEENZ', icon: 'fas fa-faucet', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFwAs0qAez23-h9TjWTLY4cw5q978Z-zcQkQ&s', brandKey: 'SHEENZ' },
     { id: 9, name: 'ZERO-B', icon: 'fas fa-tint', image: 'https://www.zerobonline.com/wp-content/uploads/2023/08/ZB-Logo-social-share2.jpg', brandKey: 'ZERO-B' },
   ];
 

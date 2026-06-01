@@ -971,11 +971,6 @@ return (
                   <p>See products in person at our showroom near Ganga Oil Mill, J.K. Road</p>
                 </div>
                 <div className="why-choose-item">
-                  <div className="why-choose-icon">🚚</div>
-                  <h3>Pan India Delivery</h3>
-                  <p>We ship across India with secure packaging</p>
-                </div>
-                <div className="why-choose-item">
                   <div className="why-choose-icon">🔧</div>
                   <h3>Professional Installation</h3>
                   <p>Expert installation services available</p>
