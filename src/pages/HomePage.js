@@ -101,7 +101,7 @@ const HomePage = () => {
     { id: 14, name: 'AROFIC', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQexOvLwKCqfBqsABNAel2tdMKU6BI5lIASw&s' },
     { id: 15, name: 'GEBERIT', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdicD30F2fVkcM1TP5ZnhIJwp9dZ3Vo6jUIw&s' },
     { id: 16, name: 'DEEPALI', img: 'https://deepalisinks.com/wp-content/uploads/2021/10/Deepali-Sinks-Logo.png' },
-    { id: 17, name: 'SHEENZ', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_jRCABpHv6cMdQCVG_F88P4M9PlgEgTsMg&s' },
+    { id: 17, name: 'SHEENZ', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFwAs0qAez23-h9TjWTLY4cw5q978Z-zcQkQ&s' },
     { id: 18, name: 'KSB', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcRw4IQANpBYNiS2897yChcHMszeA754DdA&s' },
     { id: 19, name: 'ZERO-B', img: 'https://www.zerobonline.com/wp-content/uploads/2023/08/ZB-Logo-social-share2.jpg' },
   ];
